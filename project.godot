@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GameJamBoilerPlate-gdscript"
+config/name="Ghost-Game"
 run/main_scene="res://Scenes/InitApp/InitApp.tscn"
 config/icon="res://icon.png"
 
@@ -42,6 +42,12 @@ Config="*res://Scripts/Config.gd"
 InGameMenuController="*res://Scripts/InGameMenuController.gd"
 SceneLoader="*res://Scripts/SceneLoader.gd"
 AppLogger="*res://Scripts/AppLogger.gd"
+
+[display]
+
+window/size/height=576
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gui]
 

@@ -291,6 +291,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
 script = ExtResource( 1 )
+game_scene = "res://Scenes/Game/level-0/level-0.tscn"
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
@@ -324,7 +325,7 @@ custom_constants/margin_bottom = 16
 margin_left = 32.0
 margin_top = 64.0
 margin_right = 992.0
-margin_bottom = 584.0
+margin_bottom = 560.0
 mouse_filter = 2
 
 [node name="TitlesContainer" type="VBoxContainer" parent="TitleContainer/Titles"]
@@ -366,6 +367,7 @@ custom_constants/margin_left = 128
 custom_constants/margin_bottom = 128
 
 [node name="MainMenuButtons" parent="MenuContainer" instance=ExtResource( 2 )]
+margin_bottom = 448.0
 
 [node name="MasterOptionsMenu" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -391,7 +393,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 128.0
 margin_right = 1024.0
-margin_bottom = 568.0
+margin_bottom = 544.0
 
 [node name="FlowControlContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -406,7 +408,7 @@ custom_constants/margin_bottom = 16
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 1008.0
-margin_bottom = 584.0
+margin_bottom = 560.0
 mouse_filter = 2
 
 [node name="BackButton" parent="FlowControlContainer/FlowControl" instance=ExtResource( 5 )]

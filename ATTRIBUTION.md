@@ -8,11 +8,17 @@ Person 2
 
 
 ## Sourced / Unaffiliated
-### Asset Type
-#### Use Case
-Author: [Name]()  
-Source: [Domain : webpage.html]()  
-License: [License]()
+### Art Assets
+#### Some Interior Objects
+Author: [Reemax]()  
+Source: [OpenGameArt : https://opengameart.org/content/lpc-house-interior-and-decorations](https://opengameart.org/content/lpc-house-interior-and-decorations)  
+License: [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/)
+
+#### Interior walls/borders
+Author: [Kenney Free Game Assets]()  
+Source: [Topdown Shooter : https://kenney.nl/assets/topdown-shooter](https://kenney.nl/assets/topdown-shooter)  
+License: [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/)
+
 
 
 ## Tools

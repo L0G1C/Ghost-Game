@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Art/Ghosty.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Art/Textures/2DLight.png" type="Texture" id=3]
 
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Idle"
@@ -102,5 +103,9 @@ shape = SubResource( 3 )
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+energy = 0.84
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

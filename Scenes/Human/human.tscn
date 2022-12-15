@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Art/human.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Human/human.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Art/Textures/2DLight.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.0
@@ -108,3 +109,7 @@ anims/Idle = SubResource( 3 )
 autoplay = "Idle"
 anims/Idle = SubResource( 4 )
 anims/Walk = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+energy = 0.84

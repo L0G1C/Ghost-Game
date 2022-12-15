@@ -1,8 +1,13 @@
+class_name Player
 extends KinematicBody2D
 
+
 var Velocity = Vector2.ZERO
-const ACCELERATION = 450
-const MAX_SPEED = 100;
+var ghost_state = false;
+var ghost_state_timer = 6;
+var ghost_state_tick = 0;
+const ACCELERATION = 550
+const MAX_SPEED = 200;
 const FRICTION = 450;
 
 onready var _animTree = $AnimationTree
@@ -21,9 +26,9 @@ func _physics_process(delta):
 		_animState.travel("Walk")
 		Velocity = Velocity.move_toward(inputVector * MAX_SPEED, ACCELERATION * delta)
 		
-		if (inputVector == Vector2.LEFT):
+		if (inputVector.x < 0):
 			$Sprite.flip_h = true
-		elif (inputVector == Vector2.RIGHT):
+		elif (inputVector.x >= 0):
 			$Sprite.flip_h = false
 
 	else:
@@ -32,3 +37,20 @@ func _physics_process(delta):
 		
 	Velocity = move_and_slide(Velocity)
 
+	if (Input.is_action_just_pressed("jump")):		
+		ghost_state = true
+		
+	if (ghost_state && ghost_state_tick < ghost_state_timer):		
+		ghost_state_tick += delta * 10
+		$Sprite.modulate.a = 0.5
+		set_collision_mask(6)
+		set_collision_layer(6)
+	elif (ghost_state && ghost_state_tick >= ghost_state_timer):
+		ghost_state = false
+		$Sprite.modulate.a = 1
+		ghost_state_tick = 0
+		set_collision_mask(5)
+		set_collision_layer(5)
+
+func get_state():
+	return ghost_state

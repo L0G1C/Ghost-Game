@@ -1,34 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Resources/Art/Door.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.4999, 19.5001 )
+[ext_resource path="res://Scenes/Door/Door.tscn" type="PackedScene" id=3]
 
 [node name="level-0" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 show_collision = true
+collision_layer = 4
+collision_mask = 4
 format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -65533, 0, 3, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 1, 65535, 0, 65538, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 0, 65538, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 0, 65538, 131071, 0, 65538, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 0, 65538, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 0, 65538, 196607, 0, 65538, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 0, 6, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 0, 65538, 262143, 0, 65538, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 0, 65538, 327679, 0, 65536, 262144, 0, 2, 262145, 0, 2, 262146, 0, 2, 262147, 0, 2, 262148, 0, 2, 262149, 0, 2, 262150, 0, 2, 262151, 0, 65537 )
+tile_data = PoolIntArray( -4, 0, 0, -3, 0, 2, -2, 0, 2, -1, 0, 2, -65536, 0, 2, -65535, 0, 3, -65534, 0, 2, -65533, 0, 2, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 1, 65532, 0, 65538, 65533, 1610612738, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 0, 65538, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 0, 65538, 131068, 0, 65538, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 0, 6, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 0, 65538, 196604, 0, 65538, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 0, 65538, 262140, 0, 65538, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 0, 65541, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 0, 65538, 327676, 0, 65538, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 0, 65538, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 0, 65538, 393212, 0, 65536, 393213, 0, 2, 393214, 0, 2, 393215, 0, 2, 327680, 0, 2, 327681, 0, 4, 327682, 0, 2, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 65537 )
 
-[node name="Door" type="Sprite" parent="."]
-position = Vector2( 222, 224 )
-rotation = 1.5708
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="ObjectMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65533, 1610612739, 0, 327679, 2, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2( -0.499939, -1.50003 )
-shape = SubResource( 1 )
+[node name="Door" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 79, 127 )
+position = Vector2( -138, 98 )
+collision_layer = 1
+collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

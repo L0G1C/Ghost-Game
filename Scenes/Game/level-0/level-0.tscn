@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Door/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Game/level-0/level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Game/Phase Bar/PhaseBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=6]
 
 [node name="level-0" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -21,11 +25,21 @@ format = 1
 tile_data = PoolIntArray( 65533, 1610612739, 0, 327679, 2, 0 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
+tutorial_door = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -138, 98 )
-collision_layer = 1
-collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="Human" parent="." instance=ExtResource( 6 )]
+position = Vector2( -160, 284 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PhaseBar" parent="CanvasLayer" instance=ExtResource( 5 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_top = -720.0
+margin_right = 1280.0

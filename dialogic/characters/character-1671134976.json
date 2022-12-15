@@ -1,0 +1,21 @@
+{
+	"color": "#ff670820",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671134976.json",
+	"mirror_portraits": false,
+	"name": "Human",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 150,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Resources/Art/Human_portrait.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

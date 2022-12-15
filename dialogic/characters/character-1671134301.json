@@ -1,0 +1,21 @@
+{
+	"color": "#ff2a99b2",
+	"description": "The friendly ghost.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671134301.json",
+	"mirror_portraits": false,
+	"name": "Ghosty",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -150,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Resources/Art/Ghosty_portrait.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

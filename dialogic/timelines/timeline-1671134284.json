@@ -1,0 +1,83 @@
+{
+	"events": [
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0.55,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hi there. So you definitely are real huh?"
+		},
+		{
+			"animation": "slide_in_right.gd",
+			"animation_length": 0.55,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yup. I'm so scared..."
+		},
+		{
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well, my ghost-family definitely won't want to see you sneaking around the mansion, but don't worry! I will get you outta here, just follow me!"
+		},
+		{
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Okay..."
+		},
+		{
+			"emit_signal": "intro_complete",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1671134284.json",
+		"name": "Intro"
+	}
+}

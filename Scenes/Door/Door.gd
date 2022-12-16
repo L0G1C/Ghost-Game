@@ -1,8 +1,9 @@
 extends StaticBody2D
+class_name Door
 
 export var tutorial_door = false
 export var tool_tip_text : String
-export(String, "spacebar") var tool_tip_icon
+export(String, "spacebar", "key") var tool_tip_icon
 var tooltip = preload("res://Scenes/Game/Tooltip/Tooltip.tscn")
 
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,14 @@
 vertices = PoolVector2Array( -63, 3, 64, -2, 60, 129, -64, 20, 70, 129, 69, 190, 61, 193, 62, 321, -193, 320, -195, 19 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 6 ), PoolIntArray( 6, 7, 8, 9, 3, 2 ) ]
 outlines = [ PoolVector2Array( -193, 320, 62, 321, 61, 193, 69, 190, 70, 129, 60, 129, 64, -2, -63, 3, -64, 20, -195, 19 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( -64, 18, -66, 2, 61, 2, 61, 126, 130, 127, 128, 3, 447, 2, 448, 319, 127, 318, 126, 193, 63, 191, 62, 319, -189, 318, -192, 18 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 4, 7, 8, 9 ), PoolIntArray( 3, 4, 9, 10 ), PoolIntArray( 10, 11, 12, 13, 0, 3 ) ]
+outlines = [ PoolVector2Array( -189, 318, 62, 319, 63, 191, 126, 193, 127, 318, 448, 319, 447, 2, 128, 3, 130, 127, 61, 126, 61, 2, -66, 2, -64, 18, -192, 18 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 179 )
 
 [node name="level-0" type="Node2D"]
 script = ExtResource( 4 )
@@ -64,3 +72,15 @@ navpoly = SubResource( 1 )
 
 [node name="Human" parent="Navigation2D" instance=ExtResource( 6 )]
 position = Vector2( -160, 284 )
+
+[node name="Navmesh_unlocked" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 2 )
+enabled = false
+
+[node name="DialogueTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger"]
+position = Vector2( 182, 154 )
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="DialogueTrigger" to="." method="_on_DialogueTrigger_area_entered"]

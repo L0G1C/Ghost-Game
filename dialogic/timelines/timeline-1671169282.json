@@ -1,0 +1,79 @@
+{
+	"events": [
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0.55,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey wait a sec...this door is locked and I can't just phase through doors like you."
+		},
+		{
+			"character": "character-1671134976.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Weird, I see a keyhole on this side."
+		},
+		{
+			"animation": "slide_in_right.gd",
+			"animation_length": 0.55,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ooooooooh...right. This estate has those fancy two way locking doors."
+		},
+		{
+			"character": "character-1671134301.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh look! There's a key over there. Maybe I can grab it with my ectoplastic body and phase back through the door for you. "
+		},
+		{
+			"emit_signal": "intro-post-phase",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1671169282.json",
+		"name": "Intro-post-phase"
+	}
+}

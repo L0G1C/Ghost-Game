@@ -19,4 +19,17 @@ func dialog_listener(string):
 	match string:
 		"intro_complete":
 			emit_signal("dialogue_pause")
+		"intro_post_phase":
+			var door = $Door as Door
+			door.tool_tip_text = "You need a key"
+			door.tool_tip_icon = "key"
+			emit_signal("dialogue_pause")
 
+
+
+func _on_DialogueTrigger_area_entered(area):
+	emit_signal("dialogue_pause")
+	
+	var new_dialog = Dialogic.start("/Intro-post-phase")
+	new_dialog.connect("dialogic_signal", self, "dialog_listener")
+	add_child(new_dialog)

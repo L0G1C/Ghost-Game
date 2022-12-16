@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Game/Tooltip/Tooltip.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Art/tooltip.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Art/UI/Keyboard Extras.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Art/key.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFontData" id=34]
 font_path = "res://Resources/Fonts/LEMONMILK-Regular.otf"
@@ -21,6 +22,11 @@ region = Rect2( 64, 96, 32, 16 )
 
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "key",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 11 ), SubResource( 27 ) ],
 "loop": true,
 "name": "spacebar",
@@ -49,7 +55,7 @@ autowrap = true
 position = Vector2( 0, 40 )
 scale = Vector2( 1.6875, 1.6875 )
 frames = SubResource( 33 )
-animation = "spacebar"
+animation = "key"
 playing = true
 
 [node name="Tween" type="Tween" parent="."]

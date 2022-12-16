@@ -7,6 +7,7 @@ func _ready():
 	$Player.connect("phase", $CanvasLayer/PhaseBar, "on_phase_cooldown")
 	$Player.connect("cooldown_tick", $CanvasLayer/PhaseBar, "on_cooldown_tick")
 	connect("dialogue_pause", $Player, "_on_dialogue_pause")
+	connect("dialogue_pause", $Navigation2D, "_on_activate")
 	emit_signal("dialogue_pause")
 	
 	var new_dialog = Dialogic.start("/Intro")

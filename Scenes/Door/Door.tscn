@@ -11,7 +11,6 @@ extents = Vector2( 33.9999, 30.5001 )
 
 [node name="Door" type="StaticBody2D"]
 position = Vector2( 92, 160 )
-rotation = 1.5708
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

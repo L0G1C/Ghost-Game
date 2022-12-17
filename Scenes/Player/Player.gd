@@ -10,6 +10,7 @@ var cooldown_time = 4;
 var cooldown_time_tick = 0;
 var on_cooldown = false;
 var dialogue_pause = false;
+var key_collection = {}
 const ACCELERATION = 550
 const MAX_SPEED = 200;
 const FRICTION = 450;
@@ -84,4 +85,5 @@ func _on_CooldownTimer_timeout():
 		on_cooldown = false
 		
 func _on_dialogue_pause():
+	#print("Toggling Player.  pause: %s" % dialogue_pause)
 	dialogue_pause = !dialogue_pause

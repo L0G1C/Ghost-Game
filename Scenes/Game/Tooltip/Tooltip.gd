@@ -15,6 +15,10 @@ func tooltip_config(text, icon):
 	match (icon):
 		"spacebar":
 			$Background/Icon.animation = "spacebar"
+		"key":
+			$Background/Icon.animation = "key"
+		"e_btn":
+			$Background/Icon.animation = "e_btn"
 
 func fade():
 	tween.interpolate_property(self, "modulate",  Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.56, 

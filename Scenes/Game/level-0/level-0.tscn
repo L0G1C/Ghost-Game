@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/Game/Phase Bar/PhaseBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Game/level-0/Navigation2D.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Keys/Keys.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Resources/Art/key.png" type="Texture" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -63, 3, 64, -2, 60, 129, -64, 20, 70, 129, 69, 190, 61, 193, 62, 321, -193, 320, -195, 19 )
@@ -19,7 +21,10 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArra
 outlines = [ PoolVector2Array( -189, 318, 62, 319, 63, 191, 126, 193, 127, 318, 448, 319, 447, 2, 128, 3, 130, 127, 61, 126, 61, 2, -66, 2, -64, 18, -192, 18 ) ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 50, 179 )
+extents = Vector2( 30, 179 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 26, 34.5 )
 
 [node name="level-0" type="Node2D"]
 script = ExtResource( 4 )
@@ -30,7 +35,7 @@ show_collision = true
 collision_layer = 4
 collision_mask = 4
 format = 1
-tile_data = PoolIntArray( -4, 0, 0, -3, 0, 2, -2, 0, 2, -1, 0, 2, -65536, 0, 2, -65535, 0, 3, -65534, 0, 2, -65533, 0, 2, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 1, 65532, 0, 65538, 65533, 1610612738, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 0, 65538, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 0, 65538, 131068, 0, 65538, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 0, 6, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 0, 65538, 196604, 0, 65538, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 0, 65538, 262140, 0, 65538, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 0, 65541, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 0, 65538, 327676, 0, 65538, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 0, 65538, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 0, 65538, 393212, 0, 65536, 393213, 0, 2, 393214, 0, 2, 393215, 0, 2, 327680, 0, 2, 327681, 0, 4, 327682, 0, 2, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 65537 )
+tile_data = PoolIntArray( -4, 0, 0, -3, 0, 2, -2, 0, 2, -1, 0, 2, -65536, 0, 2, -65535, 0, 3, -65534, 0, 2, -65533, 0, 2, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 1, 65532, 0, 65538, 65533, 1610612738, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 0, 65538, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 0, 65538, 131068, 0, 65538, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 0, 6, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 0, 6, 196604, 0, 65538, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 4, 0, 262140, 0, 65538, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 0, 65541, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 0, 65541, 327676, 0, 65538, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 0, 65538, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 0, 65538, 393212, 0, 65536, 393213, 0, 2, 393214, 0, 2, 393215, 0, 2, 327680, 0, 2, 327681, 0, 4, 327682, 0, 2, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 65537 )
 
 [node name="ObjectMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -43,6 +48,12 @@ rotation = 1.5708
 tutorial_door = true
 tool_tip_text = "Enter ghost phase"
 tool_tip_icon = "spacebar"
+door_name = "Intro"
+
+[node name="Key" parent="." instance=ExtResource( 8 )]
+position = Vector2( 400, 31 )
+texture = ExtResource( 9 )
+door_name = "Intro"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -138, 98 )
@@ -78,9 +89,18 @@ navpoly = SubResource( 2 )
 enabled = false
 
 [node name="DialogueTrigger" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger"]
-position = Vector2( 182, 154 )
+position = Vector2( 202, 154 )
 shape = SubResource( 3 )
 
-[connection signal="area_entered" from="DialogueTrigger" to="." method="_on_DialogueTrigger_area_entered"]
+[node name="ExitTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2( 480, 160.5 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="DialogueTrigger" to="." method="_on_DialogueTrigger_body_entered"]
+[connection signal="body_shape_entered" from="ExitTrigger" to="." method="_on_ExitTrigger_body_shape_entered"]

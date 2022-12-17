@@ -4,7 +4,7 @@ export(float) var character_speed = 400.0
 export(NodePath) var playerPath
 var path = []
 
-onready var is_active = false
+onready var is_active = true
 onready var character = $Human
 onready var player
 
@@ -15,7 +15,8 @@ func _process(delta):
 	var walk_distance = character_speed * delta
 	move_along_path(walk_distance)
 
-func _unhandled_input(event):	
+# warning-ignore:unused_argument
+func _unhandled_input(event):
 	if !is_active:
 		return
 	
@@ -49,5 +50,5 @@ func _update_navigation_path(start_position, end_position):
 	path.remove(0)
 	character.animate_walk()
 
-func _on_activate():
-	is_active = true
+func _on_activate():	
+	is_active = !is_active

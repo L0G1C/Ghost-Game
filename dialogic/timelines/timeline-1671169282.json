@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "slide_in_left.gd",
+			"animation": "slide_in_right.gd",
 			"animation_length": 0.55,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
@@ -12,11 +12,11 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -34,7 +34,7 @@
 			"text": "Weird, I see a keyhole on this side."
 		},
 		{
-			"animation": "slide_in_right.gd",
+			"animation": "slide_in_left.gd",
 			"animation_length": 0.55,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
@@ -45,11 +45,11 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": true
+				"4": false
 			},
 			"type": 0,
 			"z_index": 0
@@ -69,6 +69,10 @@
 		{
 			"emit_signal": "intro-post-phase",
 			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
 		}
 	],
 	"metadata": {

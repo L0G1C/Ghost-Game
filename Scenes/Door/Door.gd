@@ -24,8 +24,9 @@ func _process(delta):
 		emit_signal("door_unlocked", door_name)
 		queue_free()
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(body):	
 	if (body is Player && tutorial_door && get_node_or_null("Tooltip") == null):
+		print("entering door")
 		var player = body as Player
 		
 		if (player.key_collection.has(door_name)):
@@ -39,8 +40,9 @@ func _on_Area2D_body_entered(body):
 		phase_tooltip.position = Vector2(position.x - 30, position.y - 30)		
 		add_child(phase_tooltip)		
 		
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(body):	
 	if (body is Player && tutorial_door && get_node_or_null("Tooltip")):
+		print("exiting door")
 		$Tooltip.fade()
 		yield(get_tree().create_timer(0.6), "timeout")
 		$Tooltip.queue_free()

@@ -45,7 +45,9 @@ func _on_DialogueTrigger_body_entered(body):
 		return
 		
 	key_dialog_complete = true
-	emit_signal("dialogue_pause")	
+	emit_signal("dialogue_pause")
+	$Player.Velocity = Vector2.ZERO
+	$Player/Sprite.flip_h = true
 	var new_dialog = Dialogic.start("/Intro-post-phase")
 	new_dialog.connect("dialogic_signal", self, "dialog_listener")
 	add_child(new_dialog)
@@ -55,4 +57,4 @@ func _on_ExitTrigger_body_shape_entered(body_rid, body, body_shape_index, local_
 	if (!level_complete):
 		return
 	else:
-		SceneLoader.load_scene("level-1")
+		SceneLoader.load_scene("res://Scenes/Game/level-1/level-1.tscn")

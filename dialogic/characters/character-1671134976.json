@@ -4,7 +4,7 @@
 	"display_name": "",
 	"display_name_bool": false,
 	"id": "character-1671134976.json",
-	"mirror_portraits": false,
+	"mirror_portraits": true,
 	"name": "Human",
 	"nickname": "",
 	"nickname_bool": false,

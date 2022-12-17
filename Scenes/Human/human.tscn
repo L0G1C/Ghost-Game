@@ -71,7 +71,7 @@ disabled = true
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 3 )
-energy = 0.84
+energy = 0.71
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

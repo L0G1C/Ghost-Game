@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Art/Ghosty_portrait.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Art/Mommy.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Intro/intro.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/LEMONMILK-Regular.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/Audio/intro-music.wav" type="AudioStream" id=5]
 
 [sub_resource type="GradientTexture2D" id=1]
 
@@ -149,5 +150,11 @@ text = "\"Mommy, I'm scared. I think there's...a human in my closet!\"
 \"Shush now little Ghosty. You know that scary humans in your closet are only a a figment of your imagination.\""
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "1"
 anims/1 = SubResource( 4 )
 anims/RESET = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -2.622
+autoplay = true

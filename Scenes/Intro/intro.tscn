@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Resources/Art/Ghosty_portrait.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Art/Mommy.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Intro/intro.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/LEMONMILK-Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Resources/Audio/intro-music.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Intro/closet.png" type="Texture" id=6]
 
 [sub_resource type="GradientTexture2D" id=1]
 
@@ -25,10 +26,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.3, 14.3, 15.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CanvasLayer/PanelContainer:modulate")
@@ -37,10 +38,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.3, 7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.3, 7, 14.2, 15.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Mommy:modulate")
@@ -49,10 +50,22 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.1, 6.6, 12.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.1, 6.6, 12.8, 14.2, 15.4, 18.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Closet:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 14.2, 16.3, 20.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -105,6 +118,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Closet:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Intro" type="Node2D"]
 script = ExtResource( 3 )
@@ -129,6 +154,12 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 580, 144 )
 scale = Vector2( 22.3594, 22.1094 )
 texture = ExtResource( 2 )
+
+[node name="Closet" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 770, 223 )
+scale = Vector2( 5.12, 5.12 )
+texture = ExtResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

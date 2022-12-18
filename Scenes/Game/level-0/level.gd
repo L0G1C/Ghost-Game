@@ -29,7 +29,7 @@ func door_unlocked(door_name):
 		$Navigation2D/Navmesh_unlocked.enabled = true
 
 func dialog_listener(string):	
-	match string:
+	match (string):
 		"intro_complete":
 			emit_signal("dialogue_pause")
 		"intro-post-phase":	

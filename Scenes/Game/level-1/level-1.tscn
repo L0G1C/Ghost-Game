@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/Game/Phase Bar/PhaseBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Art/key.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Game/level-1/Path2D.gd" type="Script" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 436, 124, -400, 127, -374, 6, 258, 4, 442, -60, 264, -58 )
@@ -24,6 +26,11 @@ extents = Vector2( 30, 179 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 26, 34.5 )
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -6.5, 43.5, 0, 0, 0, 0, -27, 43.5, 0, 0, 0, 0, 255.5, 43.5 )
+}
 
 [node name="level-1" type="Node2D"]
 
@@ -97,3 +104,17 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
 position = Vector2( 480, 160.5 )
 shape = SubResource( 4 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -387, -217 )
+scale = Vector2( 2, 2 )
+curve = SubResource( 5 )
+script = ExtResource( 11 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -6.5, 43.5 )
+rotation = -0.00634337
+
+[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource( 9 )]
+rotation = 0.00634337
+scale = Vector2( 1, 1 )

@@ -12,4 +12,4 @@ func _process(delta):
 func update_text(chapter):
 	match (chapter):
 		"closet":
-			$CanvasLayer/PanelContainer/RichTextLabel.text = "See, little Ghosty? Look there, nothing to worry about. Now you have a good night and we'll haunt again tomorrow!"
+			$CanvasLayer/PanelContainer/RichTextLabel.text = "See, little Ghosty? Look there, nothing to worry about. No humans here! Go to sleep now, little one..."

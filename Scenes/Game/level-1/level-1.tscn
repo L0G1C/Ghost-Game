@@ -113,7 +113,7 @@ script = ExtResource( 11 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( -6.5, 43.5 )
-rotation = -0.00634337
+rotation = 3.14159
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource( 9 )]
 rotation = 0.00634337

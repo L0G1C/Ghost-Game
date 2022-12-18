@@ -1,10 +1,8 @@
 # Attribution
 ## Collaborators
 
-### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
+### Solo Developer
+[L0G1C](https://l0g1c.itch.io/)  
 
 
 ## Sourced / Unaffiliated

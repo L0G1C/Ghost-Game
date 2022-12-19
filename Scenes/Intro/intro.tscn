@@ -101,11 +101,14 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 16.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 16.3, 27.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "closet" ],
 "method": "update_text"
+}, {
+"args": [ NodePath("AudioStreamPlayer") ],
+"method": "fade_out"
 } ]
 }
 tracks/7/type = "audio"
@@ -118,13 +121,9 @@ tracks/7/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
 "stream": ExtResource( 8 )
 } ],
-"times": PoolRealArray( 0, 30 )
+"times": PoolRealArray( 30 )
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Human:modulate")
@@ -321,6 +320,7 @@ autoplay = true
 position = Vector2( 63, 36.5 )
 scale = Vector2( 2.5625, 2.5625 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="AnimatedSprite"]
@@ -331,4 +331,7 @@ margin_bottom = 6.39024
 custom_fonts/font = SubResource( 9 )
 text = "... skip"
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_TweenOut_tween_completed"]

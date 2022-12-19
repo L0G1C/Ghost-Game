@@ -11,7 +11,7 @@ func _ready():
 	$Player.connect("phase", $CanvasLayer/PhaseBar, "on_phase_cooldown")
 	# warning-ignore:return_value_discarded
 	$Player.connect("cooldown_tick", $CanvasLayer/PhaseBar, "on_cooldown_tick")
-	$Door.connect("door_unlocked", self, "door_unlocked")
+	$Door1.connect("door_unlocked", self, "door_unlocked")
 	# warning-ignore:return_value_discarded
 	connect("dialogue_pause", $Player, "_on_dialogue_pause")
 	# warning-ignore:return_value_discarded
@@ -33,8 +33,8 @@ func dialog_listener(string):
 		"intro_complete":
 			emit_signal("dialogue_pause")
 		"intro-post-phase":	
-			var door = $Door as Door
-			door.tool_tip_text = "You need a key"
+			var door = $Door1 as Door
+			door.tool_tip_text = "The Human needs a key"
 			door.tool_tip_icon = "key"
 			$DialogueTrigger.queue_free()
 			emit_signal("dialogue_pause")

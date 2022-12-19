@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name Enemy
 
+var tooltip = preload("res://Scenes/Game/Tooltip/Tooltip.tscn")
 
 onready var my_sprite : AnimatedSprite = $AnimatedSprite
 

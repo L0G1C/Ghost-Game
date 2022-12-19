@@ -321,7 +321,6 @@ autoplay = true
 position = Vector2( 63, 36.5 )
 scale = Vector2( 2.5625, 2.5625 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="AnimatedSprite"]

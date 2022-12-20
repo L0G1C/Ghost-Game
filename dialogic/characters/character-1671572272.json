@@ -1,0 +1,21 @@
+{
+	"color": "#ff8b25c3",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671572272.json",
+	"mirror_portraits": false,
+	"name": "Mommy",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -150,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Resources/Art/Mommy_portrait.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

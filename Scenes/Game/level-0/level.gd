@@ -21,7 +21,7 @@ func _ready():
 	$CanvasLayer/MarginContainer/PhaseBar.connect("human_key_added", $Navigation2D/Human, "_on_key_added")
 	$CanvasLayer/MarginContainer/PhaseBar.connect("human_key_added", $Door1 , "_unlock_on_human_key_add")
 	connect("dialogue_pause", $Player, "_on_dialogue_pause")
-	connect("dialogue_pause", $Navigation2D, "_on_activate")
+	connect("dialogue_pause", $Navigation2D, "_on_dialogue_pause")
 	emit_signal("dialogue_pause")
 	
 	var new_dialog = Dialogic.start("/Intro")

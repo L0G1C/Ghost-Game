@@ -8,6 +8,7 @@ var phase = load("res://Resources/Audio/phase.wav")
 var phase_cooldown = load("res://Resources/Audio/phase_cd.wav")
 
 var game_music = load("res://Resources/Audio/game-music.wav")
+var spotted_music = load("res://Resources/Audio/spotted-music.wav")
 
 onready var sfx_player = $SFXPlayer
 onready var music_player = $MusicPlayer
@@ -22,7 +23,11 @@ func play_music(name):
 			music_player.stream = game_music
 			music_player.play()
 			playing_music = true
-
+		"spotted_music":
+			music_player.stream = spotted_music
+			music_player.play()
+			playing_music = false
+			
 func play_sfx(name):
 	match name:
 		"key":

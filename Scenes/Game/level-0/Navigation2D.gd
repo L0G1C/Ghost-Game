@@ -50,5 +50,5 @@ func _update_navigation_path(start_position, end_position):
 	path.remove(0)
 	character.animate_walk()
 
-func _on_activate():	
+func _on_dialogue_pause():	
 	is_active = !is_active

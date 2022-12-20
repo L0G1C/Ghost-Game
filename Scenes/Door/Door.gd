@@ -21,7 +21,6 @@ func _process(delta):
 		$Tooltip.global_rotation = 0
 
 func _on_Area2D_body_entered(body):
-	print("door collide...%s" % body)
 	if (body is Player && tutorial_door && get_node_or_null("Tooltip") == null):
 		var phase_tooltip = tooltip.instance()
 		phase_tooltip.tooltip_config(tool_tip_text, tool_tip_icon)

@@ -26,7 +26,8 @@ func _process(delta):
 			
 		$Tooltip.queue_free()
 		
-	if ($KeyArea.get_overlapping_bodies().size() > 0 && Input.is_action_pressed("interact")):		
+	if ($KeyArea.get_overlapping_bodies().size() > 0 && Input.is_action_pressed("interact")):
+		SoundManager.play_sfx("give_key")
 		emit_signal("player_giving_human_key")
 		
 func animate_walk():

@@ -34,6 +34,8 @@ func _on_Area2D_body_entered(body):
 		SoundManager.play_sfx("door_open")
 		emit_signal("door_unlocked", door_color)
 		queue_free()
+	elif(body is Human && !unlockable):
+		SoundManager.play_sfx("door_shut")
 		
 func _on_Area2D_body_exited(body):	
 	if (body is Player && tutorial_door && get_node_or_null("Tooltip")):		

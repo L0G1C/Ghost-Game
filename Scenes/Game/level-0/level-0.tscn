@@ -63,11 +63,21 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PhaseBar" parent="CanvasLayer" instance=ExtResource( 5 )]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_top = 1.0
-anchor_right = 0.0
-margin_top = -720.0
-margin_right = 1280.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="PhaseBar" parent="CanvasLayer/MarginContainer" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 20.0
 mouse_filter = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -103,5 +113,8 @@ shape = SubResource( 3 )
 position = Vector2( 480, 160.5 )
 shape = SubResource( 4 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="body_entered" from="DialogueTrigger" to="." method="_on_DialogueTrigger_body_entered"]
 [connection signal="body_shape_entered" from="ExitTrigger" to="." method="_on_ExitTrigger_body_shape_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

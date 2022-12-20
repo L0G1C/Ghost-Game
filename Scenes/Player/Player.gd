@@ -17,6 +17,7 @@ const FRICTION = 450;
 
 signal phase
 signal cooldown_tick
+signal shake_phase_bar
 
 onready var _animTree = $AnimationTree
 onready var _cooldownTimer = $CooldownTimer
@@ -51,9 +52,11 @@ func _physics_process(delta):
 
 	if (Input.is_action_just_pressed("jump")):
 		if (on_cooldown):
-			print("on cooldown!")
+			SoundManager.play_sfx("phase_cooldown")
+			emit_signal("shake_phase_bar")
 			return
-			
+		
+		SoundManager.play_sfx("phase")
 		on_cooldown = true
 		ghost_state = true
 		_cooldownTimer.start()

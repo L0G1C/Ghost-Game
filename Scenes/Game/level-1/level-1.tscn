@@ -66,11 +66,21 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PhaseBar" parent="CanvasLayer" instance=ExtResource( 6 )]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_top = 1.0
-anchor_right = 0.0
-margin_top = -720.0
-margin_right = 1280.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="PhaseBar" parent="CanvasLayer/MarginContainer" instance=ExtResource( 6 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 20.0
 mouse_filter = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -120,3 +130,7 @@ rotation = 3.14159
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource( 9 )]
 rotation = 0.00634337
 scale = Vector2( 1, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

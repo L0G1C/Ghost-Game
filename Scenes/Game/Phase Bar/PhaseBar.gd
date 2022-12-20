@@ -9,6 +9,8 @@ onready var yellow_key = $VBoxContainer/MarginContainer/HBoxContainer/YellowKey
 onready var blue_key = $VBoxContainer/MarginContainer/HBoxContainer/BlueKey
 onready var red_key = $VBoxContainer/MarginContainer/HBoxContainer/RedKey
 
+var current_shake_priority = 0
+
 signal human_key_added
 
 # Called when the node enters the scene tree for the first time.

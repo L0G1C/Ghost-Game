@@ -9,5 +9,5 @@ script = ExtResource( 1 )
 bus = "SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -2.622
+volume_db = -4.5
 bus = "Music"

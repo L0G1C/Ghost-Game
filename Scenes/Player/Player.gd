@@ -70,7 +70,6 @@ func _physics_process(delta):
 		ghost_state_tick = 0
 		set_collision_mask(5)
 		set_collision_layer(5)
-
 func get_state():
 	return ghost_state
 

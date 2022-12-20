@@ -7,14 +7,18 @@ var level_complete = false
 
 
 func _ready():
-	# warning-ignore:return_value_discarded
+	# queue music
+	SoundManager.play_music("game")
+	
+	# signal connects
+	$Key.connect("key_picked_up", $CanvasLayer/PhaseBar, "on_player_add_key")
 	$Player.connect("phase", $CanvasLayer/PhaseBar, "on_phase_cooldown")
-	# warning-ignore:return_value_discarded
 	$Player.connect("cooldown_tick", $CanvasLayer/PhaseBar, "on_cooldown_tick")
+	$Navigation2D/Human.connect("player_giving_human_key", $CanvasLayer/PhaseBar, "on_human_add_key")
 	$Door1.connect("door_unlocked", self, "door_unlocked")
-	# warning-ignore:return_value_discarded
+	$CanvasLayer/PhaseBar.connect("human_key_added", $Navigation2D/Human, "_on_key_added")
+	$CanvasLayer/PhaseBar.connect("human_key_added", $Door1 , "_unlock_on_human_key_add")
 	connect("dialogue_pause", $Player, "_on_dialogue_pause")
-	# warning-ignore:return_value_discarded
 	connect("dialogue_pause", $Navigation2D, "_on_activate")
 	emit_signal("dialogue_pause")
 	
@@ -22,8 +26,8 @@ func _ready():
 	new_dialog.connect("dialogic_signal", self, "dialog_listener")
 	add_child(new_dialog)
 
-func door_unlocked(door_name):
-	if (door_name == "Intro"):
+func door_unlocked(door_color):
+	if (door_color == "yellow"):
 		level_complete = true
 		$Navigation2D/Navmesh.enabled = false
 		$Navigation2D/Navmesh_unlocked.enabled = true
@@ -34,8 +38,7 @@ func dialog_listener(string):
 			emit_signal("dialogue_pause")
 		"intro-post-phase":	
 			var door = $Door1 as Door
-			door.tool_tip_text = "The Human needs a key"
-			door.tool_tip_icon = "key"
+			door.tutorial_door = false
 			$DialogueTrigger.queue_free()
 			emit_signal("dialogue_pause")
 

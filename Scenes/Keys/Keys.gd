@@ -1,8 +1,9 @@
 extends Area2D
 
+signal key_picked_up
 
 export(Texture) var texture
-export(String) var door_name
+export(String) var key_color
 
 func _ready():
 	$Sprite.texture = texture
@@ -10,6 +11,8 @@ func _ready():
 
 func _on_Key_body_entered(body):
 	if (body is Player):
+		SoundManager.play_sfx("key")
 		var player = body as Player
-		player.key_collection[door_name] = 1
-		queue_free()
+		player.key_collection[key_color] = 1
+		emit_signal("key_picked_up", key_color)
+		queue_free()		

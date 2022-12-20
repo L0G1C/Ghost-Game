@@ -1,15 +1,34 @@
 extends KinematicBody2D
 class_name Human
 
+signal player_giving_human_key
 export var tutorial = false
 
 onready var anim_player = $AnimationPlayer
+var key_collection = {}
 var tooltip_scene = preload("res://Scenes/Game/Tooltip/Tooltip.tscn")
 
 func _ready():
 	pass # Replace with function body.
 
-
+func _process(delta):
+	pass
+	if (tutorial && get_node_or_null("Tooltip")):
+		if (get_node_or_null("Tooltip") == null):
+			return
+			
+		$Tooltip.fade()
+		
+		yield(get_tree().create_timer(0.6), "timeout")
+		
+		if (get_node_or_null("Tooltip") == null):
+			return
+			
+		$Tooltip.queue_free()
+		
+	if ($KeyArea.get_overlapping_bodies().size() > 0 && Input.is_action_pressed("interact")):		
+		emit_signal("player_giving_human_key")
+		
 func animate_walk():
 	anim_player.play("Walk")
 
@@ -36,4 +55,10 @@ func _on_TutorialArea_body_exited(body):
 	if (body is Player && tutorial && get_node_or_null("Tooltip")):
 		$Tooltip.fade()
 		yield(get_tree().create_timer(0.6), "timeout")
+		
+		if (get_node_or_null("Tooltip") == null):
+			return
 		$Tooltip.queue_free()
+
+func _on_key_added(key_color):
+	key_collection[key_color] = 1

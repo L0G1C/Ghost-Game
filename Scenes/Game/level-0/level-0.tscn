@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Game/level-0/Navigation2D.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Keys/Keys.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Resources/Art/key.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Art/yellow-key.png" type="Texture" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -63, 3, 64, -2, 60, 129, -64, 20, 70, 129, 69, 190, 61, 193, 62, 321, -193, 320, -195, 19 )
@@ -48,12 +48,12 @@ rotation = 1.5708
 tutorial_door = true
 tool_tip_text = "Enter ghost phase"
 tool_tip_icon = "spacebar"
-door_name = "Intro"
+door_color = "yellow"
 
 [node name="Key" parent="." instance=ExtResource( 8 )]
 position = Vector2( 400, 31 )
 texture = ExtResource( 9 )
-door_name = "Intro"
+key_color = "yellow"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -138, 98 )

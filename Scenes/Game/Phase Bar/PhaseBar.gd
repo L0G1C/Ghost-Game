@@ -1,9 +1,15 @@
 extends Control
 
-onready var cooldown_bar = $MainBar
-onready var flash_bar = $FlashBar
-onready var tween = $Tween
+onready var cooldown_bar = $VBoxContainer/Container/MainBar
+onready var flash_bar = $VBoxContainer/Container/FlashBar
+onready var tween = $VBoxContainer/Container/Tween
+onready var key_container = $VBoxContainer/MarginContainer/HBoxContainer
 
+onready var yellow_key = $VBoxContainer/MarginContainer/HBoxContainer/YellowKey
+onready var blue_key = $VBoxContainer/MarginContainer/HBoxContainer/BlueKey
+onready var red_key = $VBoxContainer/MarginContainer/HBoxContainer/RedKey
+
+signal human_key_added
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +26,24 @@ func on_phase_cooldown():
 func on_cooldown_tick(value):
 	cooldown_bar.value += value
 	flash_bar.value += value
+
+func on_player_add_key(key_color):
+	var text_rect = TextureRect.new()
+	match key_color:
+		"yellow":
+			yellow_key.show()
+		"red":
+			red_key.show()
+		"blue":
+			blue_key.show()
+			
+func on_human_add_key():	
+	if(yellow_key.visible == true):
+		emit_signal("human_key_added", "yellow")
+		yellow_key.hide()
+	if(red_key.visible == true):
+		emit_signal("human_key_added", "red")
+		red_key.hide()
+	if(blue_key.visible == true):
+		emit_signal("human_key_added", "blue")
+		blue_key.hide()

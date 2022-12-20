@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Keys/Keys.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Game/Phase Bar/PhaseBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Resources/Art/key.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Art/yellow-key.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Game/level-1/Path2D.gd" type="Script" id=11]
 

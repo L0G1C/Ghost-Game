@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Human/human.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Art/yellow-key.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Game/level-1/level-1.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Game/level-1/Path2D.gd" type="Script" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
@@ -33,6 +34,7 @@ _data = {
 }
 
 [node name="level-1" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -47,14 +49,14 @@ tile_set = ExtResource( 2 )
 show_collision = true
 format = 1
 
-[node name="Door" parent="." instance=ExtResource( 3 )]
+[node name="Door1" parent="." instance=ExtResource( 3 )]
 position = Vector2( -160, -31 )
-door_name = "1-1"
+door_color = "yellow"
 
 [node name="Key" parent="." instance=ExtResource( 5 )]
 position = Vector2( 400, 31 )
 texture = ExtResource( 8 )
-door_name = "Intro"
+key_color = "yellow"
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -138, 98 )

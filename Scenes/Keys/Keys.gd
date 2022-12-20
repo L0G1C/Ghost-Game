@@ -3,7 +3,7 @@ extends Area2D
 signal key_picked_up
 
 export(Texture) var texture
-export(String) var key_color
+export(String, "yellow", "blue", "red") var key_color
 
 func _ready():
 	$Sprite.texture = texture

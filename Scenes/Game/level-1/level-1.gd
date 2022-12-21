@@ -11,24 +11,45 @@ func _ready():
 		SoundManager.play_music("game")
 		
 	# signal connects
+# warning-ignore:return_value_discarded
 	$Key.connect("key_picked_up", $CanvasLayer/MarginContainer/PhaseBar, "on_player_add_key")
+# warning-ignore:return_value_discarded
+	$Key2.connect("key_picked_up", $CanvasLayer/MarginContainer/PhaseBar, "on_player_add_key")
+# warning-ignore:return_value_discarded
 	$Player.connect("phase", $CanvasLayer/MarginContainer/PhaseBar, "on_phase_cooldown")
+# warning-ignore:return_value_discarded
 	$Player.connect("cooldown_tick", $CanvasLayer/MarginContainer/PhaseBar, "on_cooldown_tick")
+# warning-ignore:return_value_discarded
 	$Player.connect("shake_phase_bar", self , "_on_shake_phase_bar")
+# warning-ignore:return_value_discarded
 	$Navigation2D/Human.connect("player_giving_human_key", $CanvasLayer/MarginContainer/PhaseBar, "on_human_add_key")
+# warning-ignore:return_value_discarded
 	$Door1.connect("door_unlocked", self, "door_unlocked")
+	$Door1.connect("door_unlocked", $Navigation2D/Human, "door_unlocked")
+# warning-ignore:return_value_discarded
+	$Door2.connect("door_unlocked", self, "door_unlocked")
+	$Door2.connect("door_unlocked", $Navigation2D/Human, "door_unlocked")
+# warning-ignore:return_value_discarded
 	$CanvasLayer/MarginContainer/PhaseBar.connect("human_key_added", $Navigation2D/Human, "_on_key_added")
+# warning-ignore:return_value_discarded
 	$CanvasLayer/MarginContainer/PhaseBar.connect("human_key_added", $Door1 , "_unlock_on_human_key_add")
+# warning-ignore:return_value_discarded
 	connect("dialogue_pause", $Player, "_on_dialogue_pause")
+# warning-ignore:return_value_discarded
 	connect("dialogue_pause", $Navigation2D, "_on_dialogue_pause")
+# warning-ignore:return_value_discarded
 	connect("dialogue_pause", $Path2D, "_on_dialogue_pause")
+# warning-ignore:return_value_discarded
 	$Path2D/PathFollow2D/Enemy.connect("player_spotted", self, "dialog_player_spotted")
 	
-func door_unlocked(door_color):
+func door_unlocked(door_color):	
 	if (door_color == "yellow"):
-		level_complete = true
 		$Navigation2D/Navmesh.enabled = false
 		$Navigation2D/Navmesh_unlocked.enabled = true
+	if (door_color == "blue"):
+		level_complete = true
+		$Navigation2D/Navmesh_unlocked.enabled = false
+		$Navigation2D/Navmesh_unlocked2.enabled = true
 		
 func dialog_player_spotted():
 	emit_signal("dialogue_pause")
@@ -41,6 +62,7 @@ func dialog_player_spotted():
 func dialog_listener(string):	
 	match (string):
 		"spot_complete":
+# warning-ignore:return_value_discarded
 			get_tree().reload_current_scene()
 
 func get_spotting_enemy():
@@ -54,6 +76,8 @@ func start_tween():
 	$Tween.interpolate_property($CanvasLayer, "offset:x", tween_values[0], tween_values[1], 0.055)
 	$Tween.start()
 
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
 func _on_Tween_tween_completed(object, key):
 	if(!shake_complete):
 		tween_values.invert()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Game/level-0/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/level-0/tileset.tres" type="TileSet" id=2]
@@ -18,9 +18,14 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ) ]
 outlines = [ PoolVector2Array( -400, 127, 436, 124, 442, -60, 264, -58, 258, 4, -374, 6 ) ]
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 36, 129, -287, 129, -284, 70, -221, 66, 419, 71, 421, 132, 101, 128, 359, 68, -28, -189, -29, -254, 226, -257, 354, -124, 233, -317, 356, -316, 489, 133, 674, 132, 675, 323, 487, 199, 107, 195, -219, 322, -155, 257, 37, 202, -220, -124, -158, -124, -153, 198, -220, 260, -153, -186 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 7, 6, 0, 8, 9, 10, 11 ), PoolIntArray( 12, 13, 11, 10 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 18, 17, 16, 19, 20, 21 ), PoolIntArray( 3, 22, 23, 0 ), PoolIntArray( 20, 24, 21 ), PoolIntArray( 19, 25, 20 ), PoolIntArray( 18, 21, 0, 6 ), PoolIntArray( 23, 26, 8, 0 ) ]
-outlines = [ PoolVector2Array( 36, 129, 37, 202, -153, 198, -155, 257, -220, 260, -219, 322, 675, 323, 674, 132, 489, 133, 487, 199, 107, 195, 101, 128, 421, 132, 419, 71, 359, 68, 354, -124, 356, -316, 233, -317, 226, -257, -29, -254, -28, -189, -153, -186, -158, -124, -220, -124, -221, 66, -284, 70, -287, 129 ) ]
+vertices = PoolVector2Array( 36, 129, -287, 129, -284, 70, -221, 66, 419, 71, 421, 132, 101, 128, 359, 68, -28, -189, -29, -254, 226, -257, 354, -124, 489, 133, 674, 132, 675, 323, 487, 199, 107, 195, -219, 322, -155, 257, 37, 202, -220, -124, -158, -124, -153, 198, 233, -317, 356, -316, 357, -192, -220, 260, -153, -186, 365, -184, 366, -130 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 7, 6, 0, 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 16, 15, 14, 17, 18, 19 ), PoolIntArray( 3, 20, 21, 0 ), PoolIntArray( 18, 22, 19 ), PoolIntArray( 10, 23, 24, 25, 11 ), PoolIntArray( 17, 26, 18 ), PoolIntArray( 16, 19, 0, 6 ), PoolIntArray( 21, 27, 8, 0 ), PoolIntArray( 11, 25, 28, 29 ) ]
+outlines = [ PoolVector2Array( 36, 129, 37, 202, -153, 198, -155, 257, -220, 260, -219, 322, 675, 323, 674, 132, 489, 133, 487, 199, 107, 195, 101, 128, 421, 132, 419, 71, 359, 68, 354, -124, 366, -130, 365, -184, 357, -192, 356, -316, 233, -317, 226, -257, -29, -254, -28, -189, -153, -186, -158, -124, -220, -124, -221, 66, -284, 70, -287, 129 ) ]
+
+[sub_resource type="NavigationPolygon" id=6]
+vertices = PoolVector2Array( 805, -255, 803, 3, 742, -5, 678, -253, 742, 64, 487, 66, 490, 6, 36, 129, -287, 129, -284, 70, -221, 66, 419, 71, 421, 132, 101, 128, 359, 68, 419, -190, 417, -319, 676, -314, 426, 3, 421, -125, 354, -124, 357, -192, -28, -189, -29, -254, 226, -257, 489, 133, 674, 132, 675, 323, 487, 199, 107, 195, -219, 322, -155, 257, 37, 202, -220, -124, -158, -124, -153, 198, 233, -317, 356, -316, -220, 260, -153, -186 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 6, 3 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 3, 6, 18, 19 ), PoolIntArray( 15, 19, 20, 21 ), PoolIntArray( 14, 13, 7, 22, 23, 24, 20 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 29, 28, 27, 30, 31, 32 ), PoolIntArray( 10, 33, 34, 7 ), PoolIntArray( 31, 35, 32 ), PoolIntArray( 24, 36, 37, 21, 20 ), PoolIntArray( 30, 38, 31 ), PoolIntArray( 29, 32, 7, 13 ), PoolIntArray( 34, 39, 22, 7 ) ]
+outlines = [ PoolVector2Array( 36, 129, 37, 202, -153, 198, -155, 257, -220, 260, -219, 322, 675, 323, 674, 132, 489, 133, 487, 199, 107, 195, 101, 128, 421, 132, 419, 71, 359, 68, 354, -124, 421, -125, 426, 3, 490, 6, 487, 66, 742, 64, 742, -5, 803, 3, 805, -255, 678, -253, 676, -314, 417, -319, 419, -190, 357, -192, 356, -316, 233, -317, 226, -257, -29, -254, -28, -189, -153, -186, -158, -124, -220, -124, -221, 66, -284, 70, -287, 129 ) ]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30, 179 )
@@ -53,10 +58,20 @@ format = 1
 position = Vector2( -160, -31 )
 door_color = "yellow"
 
+[node name="Door2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 159, -352 )
+rotation = 1.5708
+door_color = "blue"
+
 [node name="Key" parent="." instance=ExtResource( 5 )]
 position = Vector2( 400, 31 )
 texture = ExtResource( 8 )
 key_color = "yellow"
+
+[node name="Key2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 436, -202 )
+texture = ExtResource( 8 )
+key_color = "blue"
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -138, 98 )
@@ -100,6 +115,11 @@ position = Vector2( -217, 88 )
 [node name="Navmesh_unlocked" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( -229, -194 )
 navpoly = SubResource( 2 )
+enabled = false
+
+[node name="Navmesh_unlocked2" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -229, -194 )
+navpoly = SubResource( 6 )
 enabled = false
 
 [node name="DialogueTrigger" type="Area2D" parent="."]

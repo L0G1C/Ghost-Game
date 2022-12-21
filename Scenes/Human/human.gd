@@ -11,6 +11,7 @@ var tooltip_scene = preload("res://Scenes/Game/Tooltip/Tooltip.tscn")
 func _ready():
 	pass # Replace with function body.
 
+# warning-ignore:unused_argument
 func _process(delta):
 	pass
 	if (tutorial && get_node_or_null("Tooltip")):
@@ -62,4 +63,12 @@ func _on_TutorialArea_body_exited(body):
 		$Tooltip.queue_free()
 
 func _on_key_added(key_color):
+	print("adding key %s" % key_color)	
 	key_collection[key_color] = 1
+	print(key_collection)
+
+func door_unlocked(key_color):
+	print("Erasing %s" % key_color)
+	if(key_collection[key_color] != null):
+		key_collection.erase(key_color)
+	print(key_collection)

@@ -12,6 +12,9 @@ func _ready():
 	player = get_node(playerPath)
 
 func _process(delta):
+	if !is_active:
+		return
+		
 	var walk_distance = character_speed * delta
 	move_along_path(walk_distance)
 

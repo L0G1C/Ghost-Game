@@ -10,10 +10,19 @@ signal door_unlocked
 
 var unlockable = false
 var tooltip = preload("res://Scenes/Game/Tooltip/Tooltip.tscn")
+var yellow_door = load("res://Resources/Art/Door-yellow.png")
+var red_door = load("res://Resources/Art/Door-red.png")
+var blue_door = load("res://Resources/Art/Door-blue.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	match door_color:
+		"yellow":
+			$Sprite.texture = yellow_door
+		"red":
+			$Sprite.texture = red_door
+		"blue":
+			$Sprite.texture = blue_door
 
 # warning-ignore:unused_argument
 func _process(delta):
@@ -28,9 +37,8 @@ func _on_Area2D_body_entered(body):
 		phase_tooltip.position = Vector2(position.x - 30, position.y - 30)		
 		add_child(phase_tooltip)
 		
-	if (body is Human && unlockable):
-		print("human touch?")
-		SoundManager.play_sfx("door_open")
+	if (body is Human && unlockable):		
+		SoundManager.play_sfx("door_open")		
 		emit_signal("door_unlocked", door_color)
 		queue_free()
 	elif(body is Human && !unlockable):

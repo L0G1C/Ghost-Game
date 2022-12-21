@@ -29,8 +29,7 @@ func on_cooldown_tick(value):
 	cooldown_bar.value += value
 	flash_bar.value += value
 
-func on_player_add_key(key_color):
-	var text_rect = TextureRect.new()
+func on_player_add_key(key_color):	
 	match key_color:
 		"yellow":
 			yellow_key.show()

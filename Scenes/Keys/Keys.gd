@@ -5,8 +5,18 @@ signal key_picked_up
 export(Texture) var texture
 export(String, "yellow", "blue", "red") var key_color
 
+var yellow = load("res://Resources/Art/yellow-key.png")
+var red = load("res://Resources/Art/red-key.png")
+var blue = load("res://Resources/Art/blue-key.png")
+
 func _ready():
-	$Sprite.texture = texture
+	match key_color:
+		"yellow":
+			$Sprite.texture = yellow
+		"red":
+			$Sprite.texture = red
+		"blue":
+			$Sprite.texture = blue
 
 
 func _on_Key_body_entered(body):

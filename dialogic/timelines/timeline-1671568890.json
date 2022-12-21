@@ -37,6 +37,42 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"condition": "",
+			"definition": "1671572251-787",
+			"event_id": "dialogic_012",
+			"value": "Daddy"
+		},
+		{
+			"animation": "bouncing_in.gd",
+			"animation_length": 0.5,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671597251.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671597251.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ghosty! Go back to bed!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
 			"emit_signal": "spot_complete",
 			"event_id": "dialogic_040"
 		},

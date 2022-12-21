@@ -51,5 +51,6 @@ func _on_Area2D_body_exited(body):
 		$Tooltip.queue_free()
 
 func _unlock_on_human_key_add(key_color):
+	print("unlocking  %s" % key_color)
 	if (key_color == door_color):
 		unlockable = true

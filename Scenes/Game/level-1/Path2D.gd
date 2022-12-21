@@ -1,10 +1,10 @@
 extends Path2D
 
 onready var is_active = true
-
 onready var path_follow = $PathFollow2D
 onready var path_length = self.curve.get_baked_length()
 onready var enemy = $PathFollow2D/Enemy as Enemy
+
 var reversed = false
 
 func _physics_process(delta):

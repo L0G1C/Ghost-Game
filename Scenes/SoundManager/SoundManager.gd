@@ -7,6 +7,7 @@ var key_give = load("res://Resources/Audio/key_give.wav")
 var phase = load("res://Resources/Audio/phase.wav")
 var phase_cooldown = load("res://Resources/Audio/phase_cd.wav")
 
+var intro_music = load("res://Resources/Audio/intro-music.wav")
 var game_music = load("res://Resources/Audio/game-music.wav")
 var spotted_music = load("res://Resources/Audio/spotted-music.wav")
 
@@ -19,6 +20,10 @@ func _ready():
 
 func play_music(name):
 	match name:
+		"intro":
+			music_player.stream = intro_music
+			music_player.play(33.8)
+			playing_music = false
 		"game":
 			music_player.stream = game_music
 			music_player.play()
@@ -48,3 +53,6 @@ func play_sfx(name):
 		"phase_cooldown":
 			sfx_player.stream = phase_cooldown
 			sfx_player.play()
+
+func stop():
+	music_player.stop()

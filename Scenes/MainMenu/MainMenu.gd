@@ -65,6 +65,9 @@ func _setup_version_name():
 	$"%VersionNameLabel".text = "v%s" % version_name
 
 func _ready():
+	if (!SoundManager.playing_music):
+		SoundManager.stop()
+		
 	_setup_for_web()
 	_setup_version_name()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")

@@ -20,4 +20,4 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _on_SpotArea_body_entered(body):
-	emit_signal("player_spotted")
+	emit_signal("player_spotted", "mommy")

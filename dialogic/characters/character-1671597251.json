@@ -1,0 +1,21 @@
+{
+	"color": "#ff034d57",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671597251.json",
+	"mirror_portraits": false,
+	"name": "Daddy Ghost",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -150,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Resources/Art/Daddy_portrait.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
